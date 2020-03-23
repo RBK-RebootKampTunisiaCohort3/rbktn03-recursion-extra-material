@@ -225,16 +225,38 @@ function countChars (str , c){
 }
 
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
-
+function indexOf (str ,c){
+	var found=false;
+	var i=0;
+	while ((found===false)&&(i<str.length)){
+		if (str[i]==c) {
+			return i;
+		}
+		else {i++;}
+	}
+	return "not found" ;
+}
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
 
 // Modify the power function to take advantage of this technique.
+function power (x,y){
+	var result = 1 ;
+	while (y!==0){
+		result = result * x;
+		y=y-1;
+	}
+	return result;
+}
 
 // 6.Write function called reverse that take a string and return the revers string
 
 //  reverse( 'Fatima' ) => 'amitaF'
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
+function reverse(str){
+	var stri="";
+	
+}
 
 // 7.Find the greatest common divisor of two numbers.
 
