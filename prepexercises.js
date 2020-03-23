@@ -15,9 +15,12 @@
 
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.
 
-//  function factorial(n) {
-//  // TODO: your code here
-//  }
+ function factorial (n) {
+	if (n === 1 || n === 0) {
+		return 1;
+	}
+	return n * factorial (n - 1);
+}
 //  factorial(3); // => 3 * 2 * 1 => 6
 //  factorial(4); // => 4 * 3 * 2 * 1 => 24
 //  factorial(5); // => 5 * 4 * 3 * 2 * 1 => 120
@@ -62,11 +65,12 @@
 }
 // 5.Write function that multiply the number by 10 n time
   function multiplyBy10 (num,n) {
-  if (n === 0) {
-   	 return n;
-   } {
-   	return n = num * 10; 
-   }
+  var x = num;
+  while (n > 0) {
+  	x = x * 10;
+  	n = n - 1;
+  }
+  return x;
 }
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
