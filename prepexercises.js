@@ -418,6 +418,22 @@ return countChars(str.slice(1), char);
 
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
 
+function indexOf(str, char) {
+
+  var lwrChar = char.toLowerCase();
+
+  var lwrStr = str.toLowerCase();
+
+  if(lwrStr[0] === lwrChar || lwrStr.length === 0) {
+
+    return 0;
+
+  }
+
+return 1 + indexOf(lwrStr.slice(1), lwrChar);
+
+}
+
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
 
 // Modify the power function to take advantage of this technique.
