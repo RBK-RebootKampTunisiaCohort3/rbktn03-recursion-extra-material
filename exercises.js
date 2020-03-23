@@ -5,8 +5,11 @@
 
 const russianDoll = [[[[[[[[['🇷🇺']]]]]]]]]
 
-function nestedRussianDoll(){
-
+function nestedRussianDoll(arr){
+          if (Array.isArray(arr[0])) {
+            return nestedRussianDoll(arr[0]) ;
+         }
+         return arr[0]
 }
 
 /*
