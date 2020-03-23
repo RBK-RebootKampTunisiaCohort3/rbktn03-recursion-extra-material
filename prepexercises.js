@@ -232,6 +232,32 @@ function sumStartEndRecursive(start, end) {
 
 // Refactor your sum function from earlier to be implemented in terms of product.
 
+function productEndStart(start, end) {
+
+  if(start > end) {
+
+    if(end === start) {
+
+      return start;
+
+    }
+
+    return end * productEndStart(start, end + 1);
+
+  } else if(end >= start) {
+
+    if(start === end) {
+
+      return end;
+
+    }
+
+    return start * productEndStart(start + 1, end);
+
+  }
+
+}
+
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
 
 //  // ignore the fact that inc makes use of +
@@ -244,9 +270,61 @@ function sumStartEndRecursive(start, end) {
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
 
+function inc(x) {
+
+  return x + 1;
+
+ }
+
+function dec(x) {
+
+  return x - 1;
+
+}
+
+function add(x, y) {
+
+  if(y === 1) {
+
+    return inc(x);
+
+  }
+
+return add(inc(x), dec(y));
+
+}
+
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 
+function checkIfEven(n) {
+
+  if(n === 0) {
+
+    return true;
+
+  } else if(n === -1) {
+
+    return false;
+
+  }
+
+  return checkIfEven(n - 2);
+
+}
+
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
+
+function multiplyingByAddition(a, b) {
+
+  if(b === 0) {
+
+    return 0;
+
+  }
+
+return a + multiplyingByAddition(a, b - 1);
+
+}
 
 // 6.Write a JavaScript program to get the integers in range (x, y)
 
