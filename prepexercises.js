@@ -102,11 +102,17 @@ function fib (n){
   return x + 1;
 }
 
-function dec(x) {
+ function dec(x) {
   return x - 1;
 }
- 
 
+function add(x,y){
+debugger 	
+if (y===0){
+ 		return 1;
+ 	}
+    return add(inc(x),dec(y))
+ }
  
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
