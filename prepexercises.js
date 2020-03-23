@@ -80,8 +80,14 @@
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
 
   function sum(start, end) {
+  var i = end; 
+	while(end !== start) {
+      i = i + start;
+      start = start + 1;
+	}
+	return i;
+}
   
-  }
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
@@ -105,7 +111,9 @@
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
-
+   function multiply (num1,num2) {
+   	
+   }
 // 6.Write a JavaScript program to get the integers in range (x, y)
 
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
