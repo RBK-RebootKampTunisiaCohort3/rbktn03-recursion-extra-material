@@ -331,6 +331,19 @@ return a + multiplyingByAddition(a, b - 1);
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
 // Read about Increment and Decrement operators in JS
+
+function range(a, b) {
+
+  if(a === b - 2) {
+
+    return b - 1;
+
+  }
+
+  return (a + 1) + ', ' + range(a + 1, b)
+
+}
+
 // ------------------------- Advanced -------------------------
 
 // 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a console:
@@ -346,6 +359,18 @@ return a + multiplyingByAddition(a, b - 1);
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
 
+function stringLength(str) {
+
+  if(str === "") {
+
+    return 0;
+
+  }
+
+return 1 + stringLength(str.slice(1));
+
+}
+
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
 //  5 % 2; // => 1
@@ -353,12 +378,43 @@ return a + multiplyingByAddition(a, b - 1);
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
 
+function modulo(x, y) {
+
+  if(x <  y) {
+
+    return x;
+
+  } 
+
+  return modulo(x - y, y);
+
+}
+
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
 //  // access the element at index 0
 //  'hello'[0]; // => 'h'
 //  'dog'[0]; // => 'd'
 // HINT: You'll also need to make use of the slice method as shown above in the exercise on computing the length of a string.
+
+function countChars(str, char) {
+
+  if(str.length === 0) {
+
+    return 0;
+
+  } 
+
+  if(str[0] === char) {
+
+    return 1 + countChars(str.slice(1), char);
+
+  }
+
+return countChars(str.slice(1), char);
+
+}
+
 
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
 
