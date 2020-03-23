@@ -134,3 +134,55 @@
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
+//1
+
+function sum(n) {
+ if (n ===0 ) {
+ 	return 0;
+ }
+return n + sum (n-1);
+ }
+ //2
+ 
+ function factorial(n) {
+  if( n===1) {
+  	return 1;
+  }
+return n*factorial(n-1);
+ }
+ //3
+ 
+ function repeatString(str,count) {
+ 	if( count === 0){
+ 	return '';
+ }
+	return str+ repeatString(str,count-1);
+ }
+ //4
+
+ function fib(n){
+	if ((n===0)||(n===1)){
+	return 1
+}
+	return fib(n-1)+fib(n-2);
+}
+
+//5
+
+function multiplyBy10(number, n) {
+	if (n===0) {
+	return number ;
+}
+	return number * multiplyBy10(10 , n-1);
+}
+//6
+
+function sum(start, end) {
+ if ((start===end)){
+ 	return start;
+ }
+ 	return end + sum(start,end-1);
+ }
+ //7
+
+ 
