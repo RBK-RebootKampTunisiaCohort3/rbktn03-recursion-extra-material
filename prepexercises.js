@@ -187,6 +187,13 @@ function range (x,y){
 //  //  | | | | |
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
+function stringLength (str) {
+	var i=0;
+	while (str.slice(i)!==""){
+		i++;
+	}
+	return i ;
+}
 
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
@@ -194,6 +201,12 @@ function range (x,y){
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
+function modulo (x,y){
+	while (x>y){
+		x=x-y;
+	}
+	return x;
+}
 
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
@@ -201,6 +214,15 @@ function range (x,y){
 //  'hello'[0]; // => 'h'
 //  'dog'[0]; // => 'd'
 // HINT: You'll also need to make use of the slice method as shown above in the exercise on computing the length of a string.
+function countChars (str , c){
+	var num = 0;
+	for (var i=0; i < str.length ; i++){
+		if (str[i]===c){
+			num=num+1;
+		}
+	}
+	return num;
+}
 
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
 
