@@ -168,7 +168,12 @@ function range(x, y){
 // ------------------------- Advanced -------------------------
 
 // 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a console:
-
+function stringLength(string){
+	if (string === ""){
+		return 0;
+	}
+	  return 1 + length(string.slice(1));
+}
 //  'hello'.slice(0);
 //  'hello'.slice(1);
 //  ''.slice(1);
