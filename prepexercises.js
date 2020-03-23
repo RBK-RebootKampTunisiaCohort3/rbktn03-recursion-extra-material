@@ -145,7 +145,10 @@ function range(x,y){
 }
 // ------------------------- Advanced -------------------------
 
-// 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a console:
+// 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength 
+// that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, 
+//you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. 
+//To get an idea of how slice works, try the following at a console:
 
 //  'hello'.slice(0);
 //  'hello'.slice(1);
@@ -157,13 +160,23 @@ function range(x,y){
 //  //  | | | | |
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
-
+function stringLength(str){
+	if(str.slice(1) === '')
+		return 1;
+	return 1 + stringLength(str.slice(1));
+}
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
 //  5 % 2; // => 1
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
+
+function modulo(x, y){
+	if (x < 0)
+		return x + y;
+	return modulo(x - y, y)
+}
 
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
