@@ -137,7 +137,14 @@ function multiply(x, y){
 	 return x + multiply(x, y-1)
 }
 // 6.Write a JavaScript program to get the integers in range (x, y)
-
+function range(x, y) {	
+if(y-x===2){
+		return y - 1
+	}
+for(var i= x +1; i < y; i++){
+	return i+','+range(x + 1,y)			
+} 
+ }
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
 // Read about Increment and Decrement operators in JS
@@ -155,7 +162,9 @@ function multiply(x, y){
 //  //  | | | | |
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
-
+function stringLength (string){
+	string.slice()
+}
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
 //  5 % 2; // => 1
