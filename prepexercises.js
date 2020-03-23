@@ -141,17 +141,38 @@ return x ;
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
 function add ( x, y){
-	
+	while (y!==0){
+		x =inc(x);
+		y =dec(y);
+	}
+	return x;
 	}
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
+function isEven (n){
+while (n>1){
+	n= n-2;
+}
+return n===0 ? true : false ;
+}
 
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
-
+function multiply (x,y){
+	var result = 0;
+	for (var i=0;i<y;i++){
+result = result + x;
+	}
+	return result ;
+}
 // 6.Write a JavaScript program to get the integers in range (x, y)
 
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
 // Read about Increment and Decrement operators in JS
+function range (x,y){
+	for (var i=x;i<y+1;i++){
+		console.log(i);
+	}
+}
 // ------------------------- Advanced -------------------------
 
 // 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a console:
