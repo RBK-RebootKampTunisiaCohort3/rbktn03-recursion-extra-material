@@ -191,7 +191,13 @@ function stringLength(string){
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
-
+function modulo(x, y){
+	if (x < y){
+		return x; 
+	}if (x >= y){
+		return modulo()
+	}
+}
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
 //  // access the element at index 0
