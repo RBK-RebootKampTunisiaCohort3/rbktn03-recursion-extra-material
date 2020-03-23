@@ -127,7 +127,12 @@ function add(x, y){
 	}
 }
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
-
+function isEven(n){
+	if (Math.floor(n / 2) * 2 === n){
+		return true;
+	}
+		return false;
+}
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 
 // 6.Write a JavaScript program to get the integers in range (x, y)
