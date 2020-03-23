@@ -109,7 +109,7 @@ function fib (n){
 function add(x,y){
 debugger 	
 if (y===0){
- 		return 1;
+ 		return x;
  	}
     return add(inc(x),dec(y))
  }
