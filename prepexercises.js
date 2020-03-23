@@ -28,15 +28,12 @@
 
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string str should be repeated, e.g.
 
-    function repeatString(str,count){
-    	var total = ''
-    	var i = 0
-    	while (i<count){
-    		total= total + str
-    		i++
-    	}
-      return total
-    }
+ function repeatString (str, count){
+	if (count === 0){
+		return '';
+	}
+	return str + repeatString(str, count - 1)
+}
 
 //  repeatString('dog', 0); // => ''
 //  repeatString('dog', 1); // => 'dog'
@@ -66,14 +63,12 @@ function fib (n){
 //  Write a function called fib that accepts a number n as a parameter and computes the nth fibonacci number using the above rules.
 
 // 5.Write function that multiply the number by 10 n time
-      function multiplyBy10(n,x){
-          var total = 1;
-	      for(var i=1; i<=x; i++) {
-		   result*= 10;
-	}
-      	return total * n
-
+    function multiplyBy10(x, y){
+    if (y <= 0){
+        return x;
     }
+        return multiplyBy10(x * 10, y - 1);
+}
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
 //  multiplyBy10(5,2) => 500
@@ -81,36 +76,43 @@ function fib (n){
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
 
-      function sum(start, end) {
-      	 var total = 0
-      	 for(var i = start;i<=end;i++){
-      	 	total = total + i
-      	 }
-      	 return total
- 
-      }
+     function sum(start,end){
+	if (end+1===start){
+		return 0;
+	}
+	return start + sum(start+1,end)
+}
+
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
-
+    
 // Refactor your sum function from earlier to be implemented in terms of product.
-
+     function product(start,end){
+	if (end+1===start){
+		return 1;
+	}
+	return start * product(start+1,end)
+}
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
 
-//  // ignore the fact that inc makes use of +
-//  function inc(x) {
-//  return x + 1;
-//  }
-//  function dec(x) {
-//  return x - 1;
-//  }
+  function inc(x) {
+  return x + 1;
+}
+
+function dec(x) {
+  return x - 1;
+}
+ 
+
+ 
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
 
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
-
+ 
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 
 // 6.Write a JavaScript program to get the integers in range (x, y)
