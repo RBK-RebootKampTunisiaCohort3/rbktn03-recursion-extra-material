@@ -9,7 +9,13 @@
 //  sum(4); // => 4 + 3 + 2 + 1 + 0 => 10
 //  sum(5); // => 5 + 4 + 3 + 2 + 1 + 0 => 15
 // HINT: We can rephrase 'the sum of n' as 'n plus the sum of n - 1'.
-
+function sum (n) {
+    while (n>0)
+     return n+n-- ;
+}
+undefined
+sum (3)
+6
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.
 
 //  function factorial(n) {
