@@ -229,8 +229,26 @@ function reverse(str){
 	return str.slice(stringLength(str) - 1) + reverse(str.slice(0,stringLength(str) - 1))
 }
 // 7.Find the greatest common divisor of two numbers.
-
+function gcd(x, y){
+	if (x === 0)
+		return y
+	return gcd(y % x, x)
+}
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
+// in Math the lowest common multiple is equal to thier multiplication divided by thier gcd
+function lcm(x,y){
+	return x * y / gcd(x, y)
+}
 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
+// if there's 4 persons in a party this means person 4 will shake hand with 3,2 and 1   = 3
+// person number 3 will shake hand with 2 and 1   = 2
+// and person 2 will shake hand with 1       = 1
+// total number is 6 handshakes
+
+function shakehands(n){
+	if(n === 1)
+		return 0;
+	return n - 1 + shakehands(n - 1);
+}
