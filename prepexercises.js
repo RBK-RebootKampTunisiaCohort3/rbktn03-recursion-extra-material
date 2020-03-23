@@ -63,17 +63,38 @@ function reppeatstring(str,count){
 //  fib(1) is 1
 //  fib(n) is fib(n - 1) + fib(n - 2)
 //  Write a function called fib that accepts a number n as a parameter and computes the nth fibonacci number using the above rules.
-
+function fib(n){
+	if ( (n===0) || (n===1)) {
+		return 1
+	}
+	return fib(n-1) + fib(n-2)
+}
 // 5.Write function that multiply the number by 10 n time
 
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
 //  multiplyBy10(5,2) => 500
 // ------------------------- More Practice -------------------------
+function multiplyby10(number,n){
+	if (n===0){
+		return 0
+	} else {
 
+		return number*multiplyby10(number, n-1) 
+	}
+}
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
 
-//  function sum(start, end) {
+ function sum(start, end) {
+ 	if (start === end){
+ 		return start;
+ 	} else if (end<start){
+ 	    return start+ sum(end,start-1);
+    } else {
+    	return end+ sum(start,end-1);
+    }
+ }
+
 //  // TODO: your code here
 //  }
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
@@ -81,7 +102,15 @@ function reppeatstring(str,count){
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
-
+function product(start,end){
+if (start===end){
+	return start
+} else if (start>end) {
+	 return start*product(start-1,end)
+} else {
+	return end* product(start,end-1)
+}
+}
 // Refactor your sum function from earlier to be implemented in terms of product.
 
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
@@ -95,7 +124,22 @@ function reppeatstring(str,count){
 //  }
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
-
+  function inc(x) {
+        return x + 1;
+  }
+  function dec(x) {
+        return x - 1;
+  }
+  function add(x,y){
+	if (x===0){
+		return x
+	}
+	else if (y===0){
+		return x
+	} else {
+		return add(inc(x),dec(y))
+	}
+}
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
