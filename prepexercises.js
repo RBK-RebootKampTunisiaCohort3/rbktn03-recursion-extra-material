@@ -128,22 +128,30 @@ if (y===0){
       
   }
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
-  var total = 0
+  
 function multiply(x,y){
 debugger
  	
   if(y===0){
-  		return total
-  	}
-      total = x + x  
-       return multiply(x,y-1)
+  		return 0;
+  	} 
+      return (x + multiply(x, y - 1));
       
   }
 // 6.Write a JavaScript program to get the integers in range (x, y)
-
+  function IntergerInrange(x,y) {
+    if (y-1===x) {
+        return ''
+   
+    }
+    return (x + 1 + ',' + IntergerInrange(x+1,y))
+}
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
 // Read about Increment and Decrement operators in JS
+
+ 
+
 // ------------------------- Advanced -------------------------
 
 // 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a console:
