@@ -145,19 +145,22 @@ function add(x, y){
 	if(x===0 && y===0) {    
 		return 0                            
 	}                                                   
-	if(x>0){
+	else if(x>0){
 		return inc(add(x-1,y))
 	}
-	if(x===0){
+	else if(x===0){
 		return inc(add(x,y-1))
 	}
 }
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 function isEven(n){
-	if (n / 2 === 0){
-		return true;
-	}	
-		return false;
+if (n == 0) {
+return true
+}
+else if(n== 1){
+return false
+}
+return isEven(n-2)
 }
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 function multiply(x,y){
