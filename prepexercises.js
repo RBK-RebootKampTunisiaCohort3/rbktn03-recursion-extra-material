@@ -116,12 +116,10 @@ function product(start,end){
 // }
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % oper
 function isEven(n){
-	if (){
-	return true
-}
-return false
-	
-}
+	if (n%2==0) {
+		return true
+	}
+	return false}
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 
 // 6.Write a JavaScript program to get the integers in range (x, y)
@@ -131,7 +129,18 @@ return false
 // Read about Increment and Decrement operators in JS
 // ------------------------- Advanced -------------------------
 
-// 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a console:
+// 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a co
+function stingLength (str) {
+  var length = 0;
+ 
+for( var i = 0;str.length > 0;i++){
+    str = str.slice(1);
+    length++;
+ 
+  }
+  return length;
+}
+
 
 //  'hello'.slice(0);
 //  'hello'.slice(1);
