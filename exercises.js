@@ -92,10 +92,17 @@ return result + '\n' + fizzBuzz();
 // not it is a palindrome.
 // palindrome("abba") ==> true
 // plindrome("abbaa") ==> false
-function palindrome() {
-
+function palindrome(str) {
+  let result;
+  if(str !== ''){
+ if(str.length % 2 !== 0)
+  return false;
+else if(str.slice(0,1) !== str.slice(str.length - 1))
+  return false;
+else return palindrome(str.slice(1).slice(0,-1));
+  }
+  return true;
 }
-
 
 // Write a function, lucasNumber(n), that takes in a number.
 // The function should return the n-th number of the Lucas Sequence.
@@ -116,6 +123,11 @@ function palindrome() {
 // lucasNumber(5)   // => 11
 // lucasNumber(9)   // => 76
 function lucasNumber(n) {
+  if(n === 0)
+    return 2;
+  else if(n === 1)
+    return 1;
+  return lucasNumber(n - 1) + lucasNumber(n - 2);
 }
 
 
@@ -131,6 +143,9 @@ function lucasNumber(n) {
 // sumArray([5, 2])         // => 7
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
+  if(array.length === 0)
+    return 0;
+  return array.shift() + sumArray(array)
 }
 
 
