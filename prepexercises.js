@@ -135,14 +135,22 @@ function product(start,end){
 //  }
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
-function inc(x) {
-     return x + 1;
- }
-  function dec(y) {
-     return y - 1;  
+function inc(y) {
+	return y + 1;
 }
-function add(x,y){
-        return inc(x) - dec(y-1);
+function dec(x){
+	return x - 1;
+}
+function add(x, y){
+	if(x===0 && y===0) {    
+		return 0                            
+	}                                                   
+	if(x>0){
+		return inc(add(x-1,y))
+	}
+	if(x===0){
+		return inc(add(x,y-1))
+	}
 }
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 
