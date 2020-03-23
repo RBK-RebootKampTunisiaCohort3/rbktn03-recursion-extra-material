@@ -4,6 +4,12 @@
 
 //  function sum(n) {
 //  // TODO: your code here
+function sum(n){
+	if (n === 0){
+		return 0;
+	}
+		return n + sum(n - 1);
+}
 //  }
 //  sum(3); // => 3 + 2 + 1 + 0 => 6
 //  sum(4); // => 4 + 3 + 2 + 1 + 0 => 10
@@ -14,6 +20,12 @@
 
 //  function factorial(n) {
 //  // TODO: your code here
+function factorial(n){
+	if (n === 0 || n ===1){
+		return 1;
+	}
+		return n * factorial(n - 1);
+}
 //  }
 //  factorial(3); // => 3 * 2 * 1 => 6
 //  factorial(4); // => 4 * 3 * 2 * 1 => 24
@@ -24,6 +36,12 @@
 
 //  function repeatString(str, count) {
 //  // TODO: your code here
+function repeatString(str,count){
+	if (count === 0){
+		return '';
+	}
+		return str + repeatString(str,count - 1);
+}
 //  }
 //  repeatString('dog', 0); // => ''
 //  repeatString('dog', 1); // => 'dog'
@@ -32,7 +50,8 @@
 // Your task is to implement the repeatString function using the observation that to repeat a string some count,
 //  we can concatenate that string onto the result of repeating the string count - 1.
 //  HINT: Observe that repeatString('dog', 0) should yield the empty string, ''.
-//  What happens if you evaluate this: ' ' + 'dog'?
+//  What happens if you evaluate this: ' ' + 'dog'? 
+		when we concatinate ' ' + 'dog' the result is 'dog' because we concatinate two strings.
 
 // 4.Compute the nth Fibonacci Number: The fibonacci numbers are represented by the following sequence:
 
@@ -46,9 +65,26 @@
 //  fib(1) is 1
 //  fib(n) is fib(n - 1) + fib(n - 2)
 //  Write a function called fib that accepts a number n as a parameter and computes the nth fibonacci number using the above rules.
+function fib(n){
+	if (n === 0 || n ===1){
+		return 1;
+	}
+		return fib(n - 1) + fib(n - 2);
 
+}
 // 5.Write function that multiply the number by 10 n time
-
+function multiplyBy10(number,n){
+	if (n === 0){
+		return number;
+	}	
+		return number * pow10(n);
+}
+function pow10(n){
+	if (n === 0){
+		return 1;
+	}
+		return 10*(pow10(n-1));
+}
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
 //  multiplyBy10(5,2) => 500
@@ -58,6 +94,7 @@
 
 //  function sum(start, end) {
 //  // TODO: your code here
+
 //  }
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
 //  sum(3, 5); // => 3 + 4 + 5 => 12
