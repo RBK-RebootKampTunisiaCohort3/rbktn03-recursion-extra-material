@@ -2,9 +2,11 @@
 //------------------------- Basic Requirments -------------------------
 // 1.Summation to n: Let's implement the function sum that takes a single parameter n, and computes the sum of all integers up to n starting from 0, e.g
 
-//  function sum(n) {
-//  // TODO: your code here
-//  }
+function sum(n) {
+	if(n === 0)
+		return 0;
+	return n + sum(n - 1)
+}
 //  sum(3); // => 3 + 2 + 1 + 0 => 6
 //  sum(4); // => 4 + 3 + 2 + 1 + 0 => 10
 //  sum(5); // => 5 + 4 + 3 + 2 + 1 + 0 => 15
@@ -12,9 +14,12 @@
 
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.
 
-//  function factorial(n) {
-//  // TODO: your code here
-//  }
+function factorial(n) {
+	if (n === 0)
+		return 1;
+	return n * factorial(n - 1)
+
+}
 //  factorial(3); // => 3 * 2 * 1 => 6
 //  factorial(4); // => 4 * 3 * 2 * 1 => 24
 //  factorial(5); // => 5 * 4 * 3 * 2 * 1 => 120
@@ -22,9 +27,11 @@
 
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string str should be repeated, e.g.
 
-//  function repeatString(str, count) {
-//  // TODO: your code here
-//  }
+function repeatString(str, count) {
+	if (count === 0)
+		return '';
+	return str + repeatString(str, count - 1)
+}
 //  repeatString('dog', 0); // => ''
 //  repeatString('dog', 1); // => 'dog'
 //  repeatString('dog', 2); // => 'dog' + 'dog' => 'dogdog'
@@ -46,12 +53,20 @@
 //  fib(1) is 1
 //  fib(n) is fib(n - 1) + fib(n - 2)
 //  Write a function called fib that accepts a number n as a parameter and computes the nth fibonacci number using the above rules.
-
+function fib(n){
+ 	if(n === 1 || n === 0)
+ 		return 1;
+  return fib(n - 1) + fib(n - 2); 
+}
 // 5.Write function that multiply the number by 10 n time
-
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
 //  multiplyBy10(5,2) => 500
+function multiplyBy10(number, n){
+	if (n === 0)
+		return number;
+	return 10 * multiplyBy10(number, n - 1);
+}
 // ------------------------- More Practice -------------------------
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
@@ -63,24 +78,55 @@
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
+function sum(start, end){
+	if(end > start)
+		return sum(end, start); 
+	if (start === end)
+		return end;
+	return start + sum(start + 1, end);
+}
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
-
+function productSe(start, end) { 
+ if(start > end) 
+    return productSe(end,start); 
+ if(start === end) 
+    return start; 
+ return start * productSe(start+1,end); 
+ };
 // Refactor your sum function from earlier to be implemented in terms of product.
+function product(x,y){
+	if(x === 0)
+		return 0
+	return y + product(x - 1, y)
+}
+
 
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
 
 //  // ignore the fact that inc makes use of +
-//  function inc(x) {
-//  return x + 1;
-//  }
-//  function dec(x) {
-//  return x - 1;
-//  }
+function inc(x) {
+ return x + 1;
+}
+function dec(x) {
+ return x - 1;
+}
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
+function add(x, y){
+	if(y === 0)
+		return x;
+	return add(inc(x), dec(y))
+
+}
 
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
-
+function isEven(n){
+	if(n === 0)
+		return true
+	else if (n === 1)
+		return false
+	return isEven(n - 2)
+}
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 
 // 6.Write a JavaScript program to get the integers in range (x, y)
