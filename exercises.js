@@ -6,7 +6,10 @@
 const russianDoll = [[[[[[[[['🇷🇺']]]]]]]]]
 
 function nestedRussianDoll(){
-
+  let result = '';
+  if(!Array.isArray(russianDoll))
+    return russianDoll;
+  return russianDoll.join('')
 }
 
 /*
@@ -20,7 +23,7 @@ function nestedRussianDoll(){
 const comments = [
   {
     id: 1,
-    content: `Did I ever say I was a real baker? No, I didn't. You mf's on these comments are always trying to pick sh*t apart. Mind your damn business, I wasn't talking to you "A Baker". Now that's being rude!!`,
+    content: `Did I ever say I was a real baker? No, I didn't. You mf's on these comments are always trying to pick shit apart. Mind your damn business, I wasn't talking to you "A Baker". Now that's being rude!!`,
     replies: [
       {
         id: 2,
