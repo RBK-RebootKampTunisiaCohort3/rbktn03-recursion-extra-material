@@ -2,9 +2,12 @@
 //------------------------- Basic Requirments -------------------------
 // 1.Summation to n: Let's implement the function sum that takes a single parameter n, and computes the sum of all integers up to n starting from 0, e.g
 
-//  function sum(n) {
-//  // TODO: your code here
-//  }
+ function sum(n) {
+ 	if (sum === n) {
+ 		return 0;
+ 	}
+ 	return n + n - 1;
+}
 //  sum(3); // => 3 + 2 + 1 + 0 => 6
 //  sum(4); // => 4 + 3 + 2 + 1 + 0 => 10
 //  sum(5); // => 5 + 4 + 3 + 2 + 1 + 0 => 15
@@ -12,18 +15,26 @@
 
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.
 
-//  function factorial(n) {
-//  // TODO: your code here
-//  }
+ function factorial (n) {
+	if (n === 1 || n === 0) {
+		return 1;
+	}
+	return n * factorial (n - 1);
+}
 //  factorial(3); // => 3 * 2 * 1 => 6
 //  factorial(4); // => 4 * 3 * 2 * 1 => 24
 //  factorial(5); // => 5 * 4 * 3 * 2 * 1 => 120
 // Implement the factorial function by observing that the 'factorial of n' can be rephrased as 'n times the factorial of n - 1'.
 
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string str should be repeated, e.g.
-
-//  function repeatString(str, count) {
-//  // TODO: your code here
+  
+  function repeatString (str, count){
+	if (count === 0){
+		return ''
+	}
+	return str + repeatString(str, count - 1)
+  }
+    
 //  }
 //  repeatString('dog', 0); // => ''
 //  repeatString('dog', 1); // => 'dog'
@@ -35,7 +46,7 @@
 //  What happens if you evaluate this: ' ' + 'dog'?
 
 // 4.Compute the nth Fibonacci Number: The fibonacci numbers are represented by the following sequence:
-
+   
 //  // fib(n): 1 1 2 3 5 8 13 21
 //  //         | | | | | |  |  |
 //  //      n: 0 1 2 3 4 5  6  7
@@ -46,9 +57,21 @@
 //  fib(1) is 1
 //  fib(n) is fib(n - 1) + fib(n - 2)
 //  Write a function called fib that accepts a number n as a parameter and computes the nth fibonacci number using the above rules.
-
+   function fib (n){
+	if(n === 1 || n === 0){
+		return 1;
+	}
+	return fib(n - 1) + fib(n - 2)
+}
 // 5.Write function that multiply the number by 10 n time
-
+  function multiplyBy10 (num,n) {
+  var x = num;
+  while (n > 0) {
+  	x = x * 10;
+  	n = n - 1;
+  }
+  return x;
+}
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
 //  multiplyBy10(5,2) => 500
@@ -56,9 +79,15 @@
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
 
-//  function sum(start, end) {
-//  // TODO: your code here
-//  }
+  function sum(start, end) {
+  var i = end; 
+	while(end !== start) {
+      i = i + start;
+      start = start + 1;
+	}
+	return i;
+}
+  
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
@@ -82,7 +111,9 @@
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
-
+   function multiply (num1,num2) {
+   	
+   }
 // 6.Write a JavaScript program to get the integers in range (x, y)
 
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
