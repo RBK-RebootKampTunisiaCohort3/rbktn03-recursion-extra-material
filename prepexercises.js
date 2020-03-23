@@ -220,12 +220,16 @@ return countChars(str.slice(1),char)
 // Modify the power function to take advantage of this technique.
 
 // 6.Write function called reverse that take a string and return the revers string
-
 //  reverse( 'Fatima' ) => 'amitaF'
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
-
+function reverse(str){
+	if(str.slice(0) === '')
+		return '';
+	return str.slice(stringLength(str) - 1) + reverse(str.slice(0,stringLength(str) - 1))
+}
 // 7.Find the greatest common divisor of two numbers.
+
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
 
