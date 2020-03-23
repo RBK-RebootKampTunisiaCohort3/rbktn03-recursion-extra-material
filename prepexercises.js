@@ -254,11 +254,18 @@ function power (x,y){
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
 function reverse(str){
-	var stri="";
-	
+	var x="";
+	for (var i=str.length-1; i>=0;i--){
+		x=x+str[i];
+	}
+	return x;
 }
 
 // 7.Find the greatest common divisor of two numbers.
+function greatestCommon(x,y){
+	
+}
+
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
 
