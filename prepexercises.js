@@ -2,19 +2,26 @@
 //------------------------- Basic Requirments -------------------------
 // 1.Summation to n: Let's implement the function sum that takes a single parameter n, and computes the sum of all integers up to n starting from 0, e.g
 
-//  function sum(n) {
-//  // TODO: your code here
-//  }
+ function sum(n) {
+ 	var total = 0;
+ 		if (n <= 0){
+			return 0;
+ 	}
+ 			return total = n + sum(n - 1);
+ }
 //  sum(3); // => 3 + 2 + 1 + 0 => 6
 //  sum(4); // => 4 + 3 + 2 + 1 + 0 => 10
 //  sum(5); // => 5 + 4 + 3 + 2 + 1 + 0 => 15
 // HINT: We can rephrase 'the sum of n' as 'n plus the sum of n - 1'.
 
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.
-
-//  function factorial(n) {
-//  // TODO: your code here
-//  }
+  function factorial(n) {
+  	var total = 0;
+  	if (n <= 1){
+  		return 1;
+  	}
+  		return total = n * factorial(n - 1);
+  }
 //  factorial(3); // => 3 * 2 * 1 => 6
 //  factorial(4); // => 4 * 3 * 2 * 1 => 24
 //  factorial(5); // => 5 * 4 * 3 * 2 * 1 => 120
@@ -22,9 +29,13 @@
 
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string str should be repeated, e.g.
 
-//  function repeatString(str, count) {
-//  // TODO: your code here
-//  }
+  function repeatString(str, count) {
+ 		string = "";
+ 		if (count <= 1){
+ 			return str;
+ 		}
+ 			return string = str + repeatString(str, count - 1);
+ }
 //  repeatString('dog', 0); // => ''
 //  repeatString('dog', 1); // => 'dog'
 //  repeatString('dog', 2); // => 'dog' + 'dog' => 'dogdog'
@@ -46,9 +57,19 @@
 //  fib(1) is 1
 //  fib(n) is fib(n - 1) + fib(n - 2)
 //  Write a function called fib that accepts a number n as a parameter and computes the nth fibonacci number using the above rules.
-
+function fib(n){
+	if(n === 0 || n === 1){
+		return 1;
+	}
+		return fib(n - 1) + fib(n - 2);
+}
 // 5.Write function that multiply the number by 10 n time
-
+function multiplyBy10(number, n){
+	if (n <= 0){
+		return number;
+	}
+		return multiplyBy10(number * 10, n - 1);
+}
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
 //  multiplyBy10(5,2) => 500
@@ -56,24 +77,40 @@
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
 
-//  function sum(start, end) {
-//  // TODO: your code here
-//  }
+	  function sum(start, end) {
+	  	if (start === end){
+	  		return start;
+	  	}
+	  	else if(start < end){
+	  		return start + sum(start + 1, end);
+	  	}else {
+	  		return end + sum(start, end + 1);
+	  	}
+	  }
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
-
+ function compute(start, end) {
+	  	if (start === end){
+	  		return start;
+	  	}
+	  	else if(start < end){
+	  		return start * compute(start + 1, end);
+	  	}else {
+	  		return end * compute(start, end + 1);
+	  	}
+	  }
 // Refactor your sum function from earlier to be implemented in terms of product.
 
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
 
 //  // ignore the fact that inc makes use of +
-//  function inc(x) {
-//  return x + 1;
-//  }
-//  function dec(x) {
+  function inc(x) {
+  return x + 1;
+}
+	function dec(x) {
 //  return x - 1;
 //  }
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
