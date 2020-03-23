@@ -50,9 +50,21 @@ const comments = [
   }
 ]
 
+ 
 function removeBadWords(){
-	
+      let keys = Object.keys(comments[0])
+      for (let j = 0; j < keys.length; j++){
+        if(typeof comments[0][keys[j]] === 'string')
+        comments[0][keys[j]] = replace(comments[0][keys[j]]);
+    }
+    return comments
+  }   
+
+function replace(input){
+ return input.replace(/shit|mf's|damn/gi,'****');
+
 }
+
 
 // fizzBuzz is a common interview problem but is usually done with a 'for loop' and not recursively.
 // Create a recursive fizzBuzz. If you are unfamiliar, fizzBuzz loops through 1 - 100 and prints either
@@ -61,10 +73,21 @@ function removeBadWords(){
 // If a number is divisible by 5, print 'buzz'.
 // If a number is divisible by 3 and 5, print 'fizzbuzz'.
 // Otherwise print the number itself.
+let n = 1;
 function fizzBuzz() {
-
+  let result;
+  if(n < 100){
+if(n % 3 === 0 && n % 5 === 0)
+  result = "fizzBuzz";
+else if(n % 3 === 0)
+  result = "fizz";
+else if(n % 5 === 0)
+  result = "buzz";
+else result = n
+n++; 
+return result + '\n' + fizzBuzz();
 }
-
+}
 // Create a recursive funciton that will take any string and return a boolean based on whether or
 // not it is a palindrome.
 // palindrome("abba") ==> true
