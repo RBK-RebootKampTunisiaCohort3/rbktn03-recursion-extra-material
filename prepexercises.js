@@ -133,13 +133,38 @@ function isEven(n){
 	}
 		return false;
 }
+function isEven(n){
+	if (n === 0){
+		return true;
+	}if (n === 1){
+		return false;
+	}
+		return isEven(n - 2);
+}
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
-
+function multiply(x, y){
+	if (x === 0 || y === 0){
+		return 0;
+	}
+		return x + multiply(x, (y - 1));
+}
 // 6.Write a JavaScript program to get the integers in range (x, y)
 
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
 // Read about Increment and Decrement operators in JS
+function range(x, y){
+	if(x === (y - 1) || x === y || x === (y + 1)){
+		return '';
+	}if(x < (y - 1)){
+			x++
+		  return x + ', ' + (range(x, y));
+		}if(x > (y + 1)){
+			x--
+			return x + ', ' + (range(x, y));
+		}
+	}
+
 // ------------------------- Advanced -------------------------
 
 // 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a console:
