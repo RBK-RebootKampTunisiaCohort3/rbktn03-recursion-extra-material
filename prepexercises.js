@@ -64,12 +64,12 @@ function fib(n){
 	return fib(n - 1) + fib(n - 2)
 }
 // 5.Write function that multiply the number by 10 n time
-function multipplyBy10(number,n){
-if (n===1) { 
-	return number *10
+function multiplyBy10(number,n){
+if (n===1){
+	return number *10*n ;
 }
-return number *10 + multipplyBy10(number,n);
-}
+return 10*multiplyBy10(number,n-1);}
+
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
 //  multiplyBy10(5,2) => 500
@@ -77,9 +77,15 @@ return number *10 + multipplyBy10(number,n);
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
 
-//  function sum(start, end) {
-//  // TODO: your code here
-//  }
+ function sum(start,end){
+ 	if (end > start) {
+ 		return end + sum(start,end-1)
+ 	}
+ return end ;
+ }
+ 
+ 
+
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
@@ -91,15 +97,17 @@ return number *10 + multipplyBy10(number,n);
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
 
 //  // ignore the fact that inc makes use of +
-//  function inc(x) {
-//  return x + 1;
-//  }
-//  function dec(x) {
-//  return x - 1;
-//  }
+ function inc(x) {
+  return x + 1;
+  }
+  function dec(x) {
+  return x - 1;
+ }
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
+function add(x,y){
 
+}
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
