@@ -101,15 +101,20 @@ function product(start, end) {
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
 
 //  // ignore the fact that inc makes use of +
-//  function inc(x) {
-//  return x + 1;
-//  }
-//  function dec(x) {
-//  return x - 1;
-//  }
+function inc(x) {
+return x + 1;
+}
+function dec(x) {
+return x - 1;
+}
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
+function add(x, y) {
+  if(y === 0)
+		return x;
+	return add(inc(x), dec(y));
 
+}
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 function isEven(n) {
   if (n == 0)
@@ -167,7 +172,10 @@ function modulo (a,b) {
 	if (b > a) {
 		return a ; 
 	}	
-	
+	else if (a - b < b) {
+		return a - b ;
+	}
+	return modulo(a-b,b) ;
 }
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
@@ -210,15 +218,28 @@ function power(b,e) {
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
 function reverse(str) {
-  if (str === "") 
+  if (str === "") {
     return "";
-  
-  else
+}
+  else {
     return reverse(str.slice(1)) + str.charAt(0);
+}
 }
 
 // 7.Find the greatest common divisor of two numbers.
+function commonDivisor (num1,num2) {
+    if (num1 % num2 === 0) {
+    	return num2
+    }
+	return commonDivisor(num2, num1 % num2);
+}
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
+function commonMultiple (num1,num2) {
 
+    return (num1*num2)/commonDivisor(num1,num2)
+}
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
+function handshake(N) {
+
+}
