@@ -121,6 +121,11 @@ function palindrome(str) {
 // lucasNumber(5)   // => 11
 // lucasNumber(9)   // => 76
 function lucasNumber(n) {
+  if (n === 0)
+    return 2 ;
+  else if (n === 1)
+    return 1 ;
+  return lucasNumber(n-1) + lucasNumber(n-2);
 }
 
 
@@ -136,6 +141,12 @@ function lucasNumber(n) {
 // sumArray([5, 2])         // => 7
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
+     if (array.length === 0) {
+      return 0 ;
+     }
+     else {
+    return array[0] + sumArray(array.slice(1)) ;
+     } 
 }
 
 
@@ -155,4 +166,12 @@ function makeChange(n, array){
 
 
 function findMax(arr){
+  if (arr === []) {
+    return arr[0] ;
+  }
+  else if (arr[1] > arr[0]) {
+    arr[0] = arr[1]
+    return findMax(arr.slice(1)) ;
+  }
+  return findMax(arr.slice(1)) ;
 }
