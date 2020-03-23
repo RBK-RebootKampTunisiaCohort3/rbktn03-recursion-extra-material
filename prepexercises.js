@@ -32,6 +32,7 @@ function repeatString(str, count) {
 		return '';
 	return str + repeatString(str, count - 1)
 }
+
 //  repeatString('dog', 0); // => ''
 //  repeatString('dog', 1); // => 'dog'
 //  repeatString('dog', 2); // => 'dog' + 'dog' => 'dogdog'
@@ -58,6 +59,7 @@ function fib(n){
  		return 1;
   return fib(n - 1) + fib(n - 2); 
 }
+
 // 5.Write function that multiply the number by 10 n time
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
@@ -67,6 +69,7 @@ function multiplyBy10(number, n){
 		return number;
 	return 10 * multiplyBy10(number, n - 1);
 }
+
 // ------------------------- More Practice -------------------------
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
@@ -85,6 +88,7 @@ function sum(start, end){
 		return end;
 	return start + sum(start + 1, end);
 }
+
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
 function productSe(start, end) { 
  if(start > end) 
@@ -92,7 +96,8 @@ function productSe(start, end) {
  if(start === end) 
     return start; 
  return start * productSe(start+1,end); 
- };
+ }
+
 // Refactor your sum function from earlier to be implemented in terms of product.
 function product(x,y){
 	if(x === 0)
@@ -110,6 +115,7 @@ function inc(x) {
 function dec(x) {
  return x - 1;
 }
+
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
 function add(x, y){
@@ -127,12 +133,14 @@ function isEven(n){
 		return false
 	return isEven(n - 2)
 }
+
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 function multiply(x,y){
 	if(y === 0)
 		return 0;
 	return x + multiply(x, y - 1);
 }
+
 // 6.Write a JavaScript program to get the integers in range (x, y)
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
@@ -143,6 +151,7 @@ function range(x,y){
 	x++;
 	return x + ',' + range(x, y);
 }
+
 // ------------------------- Advanced -------------------------
 
 // 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength 
@@ -165,29 +174,48 @@ function stringLength(str){
 		return 1;
 	return 1 + stringLength(str.slice(1));
 }
+
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
 //  5 % 2; // => 1
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
-
 function modulo(x, y){
 	if (x < 0)
 		return x + y;
 	return modulo(x - y, y)
 }
 
-// 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
+// 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the 
+// number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
 //  // access the element at index 0
 //  'hello'[0]; // => 'h'
 //  'dog'[0]; // => 'd'
 // HINT: You'll also need to make use of the slice method as shown above in the exercise on computing the length of a string.
 
-// 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
+function countChars(str,char){
+	if(str.slice(1) === '')
+		return 0;
+	else if(str.slice(0,1) === char)
+		return 1 + countChars(str.slice(1),char)
+	return countChars(str.slice(1),char)
+}
 
-// 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
+// 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string.
+// You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
+
+function indexOf(str, char){
+if(str.slice(1) === '')
+	return 0 ;                     //Note: if the indexes of string are meant to start with 0, change this to -1 instead of 0.
+else if(str.slice(0,1) !== char)
+	return  1 + countChars(str.slice(1),char) 
+return countChars(str.slice(1),char)
+}  
+
+// 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. 
+//To get an idea of how this works, observe that:
 
 // Modify the power function to take advantage of this technique.
 
