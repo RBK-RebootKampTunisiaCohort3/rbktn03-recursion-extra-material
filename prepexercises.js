@@ -216,8 +216,15 @@ return countChars(str.slice(1),char)
 
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. 
 //To get an idea of how this works, observe that:
-
 // Modify the power function to take advantage of this technique.
+function power(base, exp){
+	if(exp === 1)
+		return base;
+	else if(exp % 2 === 0)
+		return power(base * base, exp / 2);
+	else
+		return base * power(base * base, (exp - 1) / 2);
+}
 
 // 6.Write function called reverse that take a string and return the revers string
 //  reverse( 'Fatima' ) => 'amitaF'
