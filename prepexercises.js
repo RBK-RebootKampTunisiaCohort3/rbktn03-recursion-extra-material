@@ -107,15 +107,25 @@ function multiplyBy10(number, n){
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
 
 //  // ignore the fact that inc makes use of +
-  function inc(x) {
+function inc(x) {
   return x + 1;
 }
-	function dec(x) {
-//  return x - 1;
-//  }
+function dec(x) {
+ 	return x - 1;
+}
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
-
+function add(x, y){
+	if (x === 0){
+		return y;
+	}if (y === 0){
+		return x;
+	}if (x < y){
+		return inc(add(x,dec(y)));
+	}else {
+		return inc(add(dec(x),y));
+	}
+}
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
