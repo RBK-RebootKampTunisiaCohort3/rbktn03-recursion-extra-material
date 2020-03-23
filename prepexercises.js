@@ -98,7 +98,7 @@ return start + sum(start-1, end)
 // Refactor your sum function from earlier to be implemented in terms of product.
 function product(start, end){
 if (start === end) {
-	return start
+	return start 
 }
 else if (start < end){
 	return end * product(start, end - 1)
@@ -123,13 +123,19 @@ function add(x, y){
 }
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 function isEven (n){
-	if ( n / isEven(n-1) === 0) {
+	var number = n / 2
+	if ( n * 2 === number) {
 		return true
 	}
 	return false
 }
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
-
+function multiply(x, y){
+	if(x === 0 || y === 0){
+		return 0
+	}
+	 return x + multiply(x, y-1)
+}
 // 6.Write a JavaScript program to get the integers in range (x, y)
 
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
