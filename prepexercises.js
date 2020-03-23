@@ -155,6 +155,12 @@ debugger
 // ------------------------- Advanced -------------------------
 
 // 1.By now you should have worked with the length property of strings, e.g. 'hello'.length. Your task is to write a function called stringLength that accepts a string as a parameter and computes the length of that string; however, as you may have guessed, you are not allowed to use the length property of the string! Instead, you'll need to make use of the string method called slice. To get an idea of how slice works, try the following at a console:
+    function length(str){
+        if (str===''){
+            return 0
+        }
+          return 1 +length(str.slice(1))
+    }
 
 //  'hello'.slice(0);
 //  'hello'.slice(1);
@@ -167,8 +173,8 @@ debugger
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
 
-// 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
-
+// 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g. 
+   function modulo(n)
 //  5 % 2; // => 1
 //  8 % 10; // => 8
 //  7 % 5; // => 2
