@@ -144,6 +144,21 @@ return number * num;
 
 }
 
+//same ex using recursion:
+
+function multiplyBy10Recursive(number, n) {
+
+  if(n === 0) {
+
+    return number;
+
+  }
+
+return 10 * multiplyBy10Recursive(number, n - 1);
+
+}
+
+
 // ------------------------- More Practice -------------------------
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
@@ -182,6 +197,34 @@ function sumStartEnd(start, end) {
   }
 
 return s;
+
+}
+
+//same ex using recursion:
+
+function sumStartEndRecursive(start, end) {
+
+  if(start > end) {
+
+    if(end === start) {
+
+    return start;   
+
+    }
+
+    return end + sumStartEndRecursive(start, end + 1);
+
+  } else if(end >= start) {
+
+    if(start === end) {
+
+    return end;   
+
+    }
+
+    return start + sumStartEndRecursive(start + 1, end);
+
+  }
 
 }
 
