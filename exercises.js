@@ -157,12 +157,30 @@ function sumArray(array) {
 // makeChange(100, [0,0,0,0]) ==> [4, 0, 0, 0]
 // makeChange(168, [0, 0, 0, 0]) ==> [6, 1, 1, 3]
 function makeChange(n, array){
+ if(n === 0){
+ return array;}
+else if(n >= 25)
+  return makeChange(n - 25, [array[0]+1, 0, 0, 0])
+else if (n >= 10)
+  return makeChange(n - 10, [array[0], array[1]+1, 0, 0])
+else if (n >= 5)
+  return makeChange(n - 5,[array[0], array[1], array[2]+1, 0])
+else 
+  return makeChange(n - 1, [array[0], array[1], array[2], array[3]+1])
 }
-
 
 // Write a function that takes in an array of numbers and returns the maximum value of that array
 // Solve this recursively 
 
 
 function findMax(arr){
+  if(arr.length === 1)
+    return arr[0];
+  else if(arr[0] < arr[1]){
+        arr.splice(0,1);
+    return findMax(arr);
+  }
+  else {arr.splice(1,1);
+    return findMax(arr)
+  }
 }
