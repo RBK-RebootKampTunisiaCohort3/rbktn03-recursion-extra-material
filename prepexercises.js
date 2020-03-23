@@ -119,15 +119,25 @@ else if (start > end) {
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
 function add(x, y){
-	return inc(y) - dec(x)
+	if(x===0 && y===0) {    
+		return 0                            
+	}                                                   
+	else if(x>0){
+		return inc(add(x-1,y))
+	}
+	else if(x===0){
+		return inc(add(x,y-1))
+	}
 }
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
-function isEven (n){
-	var number = n / 2
-	if ( n * 2 === number) {
-		return true
-	}
-	return false
+function isEven(n){
+if (n == 0) {
+return true
+}
+else if(n== 1){
+return false
+}
+return isEven(n - 2)
 }
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 function multiply(x, y){
