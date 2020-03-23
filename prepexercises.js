@@ -94,15 +94,35 @@ function pow10(n){
 
 //  function sum(start, end) {
 //  // TODO: your code here
-
+function sum(start,end){
+     if (start === end){
+        return start;   
+     }
+        else if (start < end){
+        return end + sum(start,end - 1);
+    }
+        else if (start > end){
+        return start + sum(end,start -1);
+    }
+}
 //  }
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
-
 // Refactor your sum function from earlier to be implemented in terms of product.
+function product(start,end){
+     if (start === end){
+        return start ;   
+     }
+        else if (start < end){
+        return end * product(start,end - 1);
+    }
+        else if (start > end){
+        return start * product(end,start -1);
+    }
+}
 
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
 
