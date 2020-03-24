@@ -200,17 +200,22 @@ function range(x,y){
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
 function stringLength(str){
-	if (str.slice(0) === str[0]){
-		return stringLength(str - 1);
-	}
+	
+} 
+
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
 //  5 % 2; // => 1
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
-function modulo(n,m){
-
+function modulo(num1,num2){
+	if(num2 > num1){
+		return num1;
+	}
+	else if (num1 > num2){
+		return modulo(num1-num2, num2)
+	}
 }
 	
 
@@ -247,8 +252,6 @@ else if (x>y) {
 }
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
-function lcm(x,y){
-	if(
-}
+
 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
