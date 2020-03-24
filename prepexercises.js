@@ -177,12 +177,12 @@ function multiply(x,y){
 
 function range(x,y){
 	if (x === y){
-        return x;
+        return "";
       }
   else if (x < y){
-  			return (x++,range(x,y--));
+  			return (++x +','+range(x,y--));
   }
-  			return (y++,range(x--,y));
+  			return (--x +','+range(x,y++));
 }
 
 // ------------------------- Advanced -------------------------
