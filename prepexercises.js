@@ -220,7 +220,9 @@ function modulo(num1,num2){
 	
 
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
-
+function countChars(str,character){
+	
+}
 //  // access the element at index 0
 //  'hello'[0]; // => 'h'
 //  'dog'[0]; // => 'd'
