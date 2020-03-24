@@ -444,7 +444,44 @@ return 1 + indexOf(lwrStr.slice(1), lwrChar);
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
 
+function reverse(str) {
+ 
+
+  if(str.length === 0) {
+
+    return "";
+
+  }
+
+return str[str.length - 1] + reverse(str.slice(0, str.length - 1));
+
+}
+
 // 7.Find the greatest common divisor of two numbers.
+
+function commonDiv(x, y) {
+
+  if(x === y) {
+
+    return x;
+
+  } else if(x === 0) {
+
+    return y;
+
+  } else if(y === 0) {
+
+    return x;
+  
+  } else if(x > y) {
+
+    return commonDiv(x - y, y);
+
+  }
+
+return commonDiv(x, y - x);
+
+}
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
 
