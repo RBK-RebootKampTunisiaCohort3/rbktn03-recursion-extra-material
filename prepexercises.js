@@ -186,16 +186,38 @@ function range(x,y){
 //  //  | | | | |
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
-
+function stringlength(string){
+	var j=0
+	if ( index of(string) < string.slice(0)){
+     return -1
+	} else {
+		return stringlength(string.)
+	}
+}
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
 //  5 % 2; // => 1
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
-
+function modulo(x,y){
+	if (x===y){
+		return 0
+	} else if (x>y) {
+		return modulo(x-y,y)
+	} else {
+	    return x
+	}
+}
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
+function countcharts(string, character){
+	if ( indexof(character)=== -1){
+		return 0
+	} else {
+		return 
 
+	}
+}
 //  // access the element at index 0
 //  'hello'[0]; // => 'h'
 //  'dog'[0]; // => 'd'
