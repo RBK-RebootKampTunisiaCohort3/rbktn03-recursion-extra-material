@@ -146,9 +146,12 @@ function multiply(x,y){
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
 // Read about Increment and Decrement operators in JS
 function range(x,y){
-	if(x === y - 1)
-		return x;
-	return x + ',' + range(x + 1, y);
+	if(x === y - 2)
+		return x + 1;
+	else{ 
+		x++
+		return x + ',' + range(x, y);
+	}
 }
 
 // ------------------------- Advanced -------------------------
@@ -195,7 +198,7 @@ function modulo(x, y){
 // HINT: You'll also need to make use of the slice method as shown above in the exercise on computing the length of a string.
 
 function countChars(str,char){
-	if(str.slice(1) === '')
+	if(str.slice(0) === '')
 		return 0;
 	else if(str.slice(0,1) === char)
 		return 1 + countChars(str.slice(1),char)
@@ -206,11 +209,11 @@ function countChars(str,char){
 // You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
 
 function indexOf(str, char){
-if(str.slice(1) === '')
-	return 0 ;                     //Note: if the indexes of string are meant to start with 0, change this to -1 instead of 0.
+if(str.slice(0) === '')
+	return 0 ;                     //Note: if the indexes of string are meant to start with 1, change this to 1 instead of 0.
 else if(str.slice(0,1) !== char)
-	return  1 + countChars(str.slice(1),char) 
-return countChars(str.slice(1),char)
+	return  1 + indexOf(str.slice(1),char) 
+return indexOf(str.slice(1),char)
 }  
 
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. 
