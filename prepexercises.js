@@ -189,7 +189,14 @@ for (var i = 1; i<string.length; i++){
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
-
+function modulo(n, y){
+	if( y > n){
+		return n;
+	}
+	else if (n > y){
+		return modulo(n-y, y)
+	}
+}
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
 //  // access the element at index 0
