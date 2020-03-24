@@ -503,20 +503,32 @@ return commonDiv(x, y - x);
 }
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
-
+  
+  var x = 0;
+  
+  var y = 0;
+  
 function commonMultiple(a, b) {
 
   if(a % b === 0) {
 
     return b;
 
+  } else if(a === b) {
+
+    return b;
+
   } else if(a > b) {
 
-    commonMultiple(a, b + )
+    x = x + 1;
+
+    return commonMultiple(a, b + (b / x));
 
   }
 
-return commonMultiple(a + a, b);   // not yet completeed
+  y = y + 1;
+
+  return commonMultiple(a + (a / y), b);
 
 }
 
@@ -524,7 +536,7 @@ return commonMultiple(a + a, b);   // not yet completeed
 
 function handshake(n) {
 
-  if(n === 0) {
+if(n === 0) {
 
 return 0;
 
