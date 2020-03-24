@@ -211,12 +211,12 @@ function modulo(x,y){
 }
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 function countcharts(string, character){
-	if ( indexof(character)=== -1){
+	if (string.length===0){
 		return 0
-	} else {
-		return 
-
-	}
+	} else if (string[0]=== character){
+		return 1 + countcharts(string.slice(1),character);
+    }
+		return countcharts(string.slice(1), character)
 }
 //  // access the element at index 0
 //  'hello'[0]; // => 'h'
@@ -224,13 +224,24 @@ function countcharts(string, character){
 // HINT: You'll also need to make use of the slice method as shown above in the exercise on computing the length of a string.
 
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
-
+function indexOf(string,character){
+	var indexOfFirst = string.indexOf(character)
+  if( indexOfFirst=== -1){
+  	return indexOf()
+  }
+}
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
 
 // Modify the power function to take advantage of this technique.
 
 // 6.Write function called reverse that take a string and return the revers string
-
+function reverse(string){ 
+	if (string.length===0){
+		return "";
+	} else { 
+	   return reverse(string.slice(1))+string[0]
+	}
+}
 //  reverse( 'Fatima' ) => 'amitaF'
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
@@ -240,3 +251,11 @@ function countcharts(string, character){
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
+function handshake(n){
+	if (n===0){
+		return 0
+	}
+	else if (n===1){
+
+	}
+}
