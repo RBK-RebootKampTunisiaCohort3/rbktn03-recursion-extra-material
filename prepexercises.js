@@ -174,7 +174,16 @@ debugger
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
 
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g. 
- 
+
+function modulo(x, y){
+    if (x === 1){
+        return 0;
+    }else if (x < y){
+        return x;
+    }else if (x >= y){
+      return modulo((x -y), y);
+    }
+}
 //  5 % 2; // => 1
 //  8 % 10; // => 8
 //  7 % 5; // => 2
@@ -203,22 +212,41 @@ function indexOf(str,y){
 
 
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
-
-
-
-
-
-
+function power(base,exponent){
+    if ( exponent===0){
+  return 1;
+    }
+    else if (exponent ===1){
+  return base ;
+    }
+    else if (exponent%2===0){
+         return power(base*base,(exponent/2))
+    }
+   else {
+         return base*power(base*base,((exponent-1)/2))
+   }
+}
 // Modify the power function to take advantage of this technique.
 
 // 6.Write function called reverse that take a string and return the revers string
-
+function reverseString(str){
+	if (str===''){
+		return ''
+	}
+       return  reverseString(str.slice(1)) + str[0]
+  }
 //  reverse( 'Fatima' ) => 'amitaF'
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
 
 // 7.Find the greatest common divisor of two numbers.
-
+function gcd(x,y){
+	if (x>y){
+	    return (x%y)
+	}
+   
+      return  gcd(x,y-y)
+	}
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
-
+function 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
