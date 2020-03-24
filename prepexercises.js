@@ -172,6 +172,7 @@ for(var i= x +1; i < y; i++){
 //  //  | | | | |
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
+//recursion with for loop
 function stringLength (string){
 	if (string.slice(0) === ''){
 		return 0
@@ -182,6 +183,16 @@ for (var i = 1; i<string.length; i++){
 	}
 	return i
     }
+}
+
+//with recursion 
+function stringLength(string){
+	if( string === ''){
+		return 0
+	}
+else{
+return 1 + stringLength(string.slice(1))
+}
 }
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
@@ -220,15 +231,12 @@ for (var i = 0; i < string.length; i++) {
 
 // 6.Write function called reverse that take a string and return the revers string
 function reverse(string){
-	if(string.length <= 1 || string === ''){
+	if( string === ''){
 		return string
 	}
-	var i = string.length -1
-	var result= string[string.length - 1] 
-	if(i < string.length){
-		result += reverse(string[i-1])
-    }
-return result
+else{
+return reverse(string.slice(1)) + string[0]
+}
 }
 //  reverse( 'Fatima' ) => 'amitaF'
 //  reverse( 'this could be an easy question ' ) =>
