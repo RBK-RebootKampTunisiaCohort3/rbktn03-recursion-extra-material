@@ -5,7 +5,7 @@
 function sum(n) {
 	if(n === 0)
 		return 0;
-	return n + sum(n - 1)
+	return n + sum(n - 1);
 }
 //  sum(3); // => 3 + 2 + 1 + 0 => 6
 //  sum(4); // => 4 + 3 + 2 + 1 + 0 => 10
@@ -82,7 +82,7 @@ function multiplyBy10(number, n){
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
 function sum(start, end){
-	if(end > start)
+	if(start > end)
 		return sum(end, start); 
 	if (start === end)
 		return end;
@@ -147,9 +147,8 @@ function multiply(x,y){
 // Read about Increment and Decrement operators in JS
 function range(x,y){
 	if(x === y - 1)
-		return "";
-	x++;
-	return x + ',' + range(x, y);
+		return x;
+	return x + ',' + range(x + 1, y);
 }
 
 // ------------------------- Advanced -------------------------
