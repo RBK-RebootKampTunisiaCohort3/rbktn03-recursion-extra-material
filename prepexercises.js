@@ -438,6 +438,25 @@ return 1 + indexOf(lwrStr.slice(1), lwrChar);
 
 // Modify the power function to take advantage of this technique.
 
+function power(base, exp) {
+
+   if (exp === 0) {
+
+    return 1;
+
+   } else if(exp === 1) {
+
+    return base;
+
+   } else if(exp % 2 !== 0) {
+
+    return base * power(base * base, (exp - 1) / 2);
+
+   }
+      return power(base * base, exp / 2);
+
+}
+
 // 6.Write function called reverse that take a string and return the revers string
 
 //  reverse( 'Fatima' ) => 'amitaF'
