@@ -196,21 +196,29 @@ function modulo(x, y){
 		return y;
 	}if (y === 0){
 		return x;
-	}if(y > x){
-	  return modulo((y -x),x);
-	}else{
-		return modulo(y, (x - y));
+	}if(x >= y){
+	  return modulo(y, (x - y));
+	}if (y >= x){
+		return modulo((y - x), x);
 	}
 }
+
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
 //  // access the element at index 0
 //  'hello'[0]; // => 'h'
 //  'dog'[0]; // => 'd'
 // HINT: You'll also need to make use of the slice method as shown above in the exercise on computing the length of a string.
-function countChars(string, ){
-	
+function countChars(string, char){
+	if (string === ""){
+		return 0;
+	}else if (string[0] === char){
+		return 1 + countChars(string.slice(1), char);
+	}else{
+		return countChars(string.slice(1), char);
+	}
 }
+
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
 
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
@@ -224,7 +232,14 @@ function countChars(string, ){
 //  'noitseuq ysae na eb dluoc siht'.
 
 // 7.Find the greatest common divisor of two numbers.
-
+function gcd(x,y){
+	if(x === 0){
+		return y;
+	}if(y === 0){
+		return x;
+	}
+		return gcd(y, (x % y));
+}
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
