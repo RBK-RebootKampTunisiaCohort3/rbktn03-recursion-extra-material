@@ -200,11 +200,9 @@ function range(x,y){
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
 function stringLength(str){
-	if (str.slice(0)){
-		return str[0];
-	}
+	if (str.slice(0) === str[0]){
 		return stringLength(str - 1);
-}
+	}
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
 //  5 % 2; // => 1
@@ -212,6 +210,8 @@ function stringLength(str){
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
 function modulo(n,m){
+
+}
 	
 
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
@@ -229,7 +229,7 @@ function modulo(n,m){
 
 // 6.Write function called reverse that take a string and return the revers string
 function reverse(str){
-	return str.reverse;
+
 }
 //  reverse( 'Fatima' ) => 'amitaF'
 //  reverse( 'this could be an easy question ' ) =>
@@ -247,5 +247,8 @@ else if (x>y) {
 }
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
+function lcm(x,y){
+	if(
+}
 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
