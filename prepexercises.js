@@ -184,5 +184,17 @@ function sum(start, end) {
  	return end + sum(start,end-1);
  }
  //7
-
+------ more Practice----- 
+//7 
+   function range(x,y) {
+   if (y - x ===2)
+    return [y -1];
+    
+  else
+  {
+    var arr = range(x, y - 1);
+    arr.push(y - 1);
+    return arr;
+  }
+}
  
