@@ -172,6 +172,25 @@ function sumArray(array) {
 // makeChange(100, [0,0,0,0]) ==> [4, 0, 0, 0]
 // makeChange(168, [0, 0, 0, 0]) ==> [6, 1, 1, 3]
 function makeChange(n, array){
+    if(n === 0){
+        return array;
+    }
+    else if(n >= 25) {
+    	array[0]++;
+        return makeChange(n-25, array)
+    }
+    else if (n >= 10) {
+    	array[1]++;
+        return makeChange(n-10, array)
+    }
+    else if (n >= 5) {
+    	array[2]++;
+        return makeChange(n-5, array)
+    }
+    else {
+    	array[3]++;
+        return makeChange(n-1, array)
+    }
 }
 
 
