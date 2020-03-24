@@ -5,8 +5,15 @@
 
 const russianDoll = [[[[[[[[['🇷🇺']]]]]]]]]
 
-function nestedRussianDoll(){
-
+function nestedRussianDoll(arr){
+	for (var i = 0 ; i < arr.length ; i++) {
+          if (!Array.isArray(arr[i])) {
+            return arr[i] ;
+         }
+          else if (arr[i].length !== 0) {
+            return nestedRussianDoll(arr[i]) ;
+          }
+     }
 }
 
 /*
@@ -47,9 +54,18 @@ const comments = [
   }
 ]
 
-function removeBadWords(){
-	
-}
+function removeBadWords(arr,array){
+      for (var i = 0 ; i < array.length ; i++) {
+      	if (array[i].content) {
+      		array[i].content = array[i].content.replace(arr[0],'****') ;
+            return array;
+      	}
+      	else if (array[i].length !== 0) {
+      		return removeBadWords(arr,array[i])
+      	}
+      }
+    }
+
 
 // fizzBuzz is a common interview problem but is usually done with a 'for loop' and not recursively.
 // Create a recursive fizzBuzz. If you are unfamiliar, fizzBuzz loops through 1 - 100 and prints either
@@ -58,16 +74,45 @@ function removeBadWords(){
 // If a number is divisible by 5, print 'buzz'.
 // If a number is divisible by 3 and 5, print 'fizzbuzz'.
 // Otherwise print the number itself.
-function fizzBuzz() {
+function fizzBuzz(number) {
+    if (number === 0) {
+      return 0 ;
+    }
+    else if (number % 15 == 0){
+      console.log("FizzBuzz");
+      return fizzBuzz(number-1);
+    } 
+    else if (number % 3 == 0) {
+      console.log("Fizz");
+      return fizzBuzz(number-1);
 
+    } 
+    else if (number % 5 == 0) {
+      console.log("Buzz");
+      return fizzBuzz(number-1);
+    } 
+    else {
+      console.log(number); 
+      return fizzBuzz(number-1);
+    }
 }
 
 // Create a recursive funciton that will take any string and return a boolean based on whether or
 // not it is a palindrome.
 // palindrome("abba") ==> true
 // plindrome("abbaa") ==> false
-function palindrome() {
-
+function palindrome(str) {
+    var x = str.length ;
+    if (x % 2 !== 0) {
+    	return false
+    }
+    else if (x === 0) {
+        return true ;
+    }
+    else if (str.charAt(0) === str.charAt(x-1)) {
+        return palindrome(str.slice(1,x-1))
+    }
+  return false ;
 }
 
 
@@ -90,6 +135,11 @@ function palindrome() {
 // lucasNumber(5)   // => 11
 // lucasNumber(9)   // => 76
 function lucasNumber(n) {
+  if (n === 0)
+    return 2 ;
+  else if (n === 1)
+    return 1 ;
+  return lucasNumber(n-1) + lucasNumber(n-2);
 }
 
 
@@ -105,6 +155,12 @@ function lucasNumber(n) {
 // sumArray([5, 2])         // => 7
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
+     if (array.length === 0) {
+      return 0 ;
+     }
+     else {
+    return array[0] + sumArray(array.slice(1)) ;
+     } 
 }
 
 
@@ -116,6 +172,25 @@ function sumArray(array) {
 // makeChange(100, [0,0,0,0]) ==> [4, 0, 0, 0]
 // makeChange(168, [0, 0, 0, 0]) ==> [6, 1, 1, 3]
 function makeChange(n, array){
+    if(n === 0){
+        return array;
+    }
+    else if(n >= 25) {
+    	array[0]++;
+        return makeChange(n-25, array)
+    }
+    else if (n >= 10) {
+    	array[1]++;
+        return makeChange(n-10, array)
+    }
+    else if (n >= 5) {
+    	array[2]++;
+        return makeChange(n-5, array)
+    }
+    else {
+    	array[3]++;
+        return makeChange(n-1, array)
+    }
 }
 
 
@@ -124,4 +199,16 @@ function makeChange(n, array){
 
 
 function findMax(arr){
+
+  if (arr.length === 1) {
+    return arr[0] ;
+  }
+  else if (arr[1] > arr[0]) {
+    arr.splice(0,1)
+    return findMax(arr) ;
+  }
+else {
+    arr.splice(1,1)
+  return findMax(arr) ;
+}
 }
