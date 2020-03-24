@@ -109,6 +109,12 @@ function lucasNumber(n) {
 // sumArray([5, 2])         // => 7
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
+	if(array === []){
+		return 0
+	} var result = 0
+	else {
+		result =sumArray(array[i])
+	} return result
 }
 
 
