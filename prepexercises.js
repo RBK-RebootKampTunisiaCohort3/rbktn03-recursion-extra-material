@@ -248,5 +248,5 @@ function gcd(x,y){
       return  gcd(x,y-y)
 	}
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
-function 
+function lcd
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
