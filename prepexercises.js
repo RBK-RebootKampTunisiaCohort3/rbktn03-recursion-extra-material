@@ -241,5 +241,8 @@ function commonMultiple (num1,num2) {
 }
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
 function handshake(N) {
-
+    if (N === 0) {
+    	return 0 ;
+    }
+    return (N-1) + handshake(N-1)
 }
