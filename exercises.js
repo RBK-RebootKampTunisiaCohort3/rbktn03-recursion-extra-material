@@ -6,10 +6,14 @@
 const russianDoll = [[[[[[[[['🇷🇺']]]]]]]]]
 
 function nestedRussianDoll(arr){
-          if (Array.isArray(arr[0])) {
-            return nestedRussianDoll(arr[0]) ;
+	for (var i = 0 ; i < arr.length ; i++) {
+          if (!Array.isArray(arr[i])) {
+            return arr[i] ;
          }
-         return arr[0]
+          else if (arr[i].length !== 0) {
+            return nestedRussianDoll(arr[i]) ;
+          }
+     }
 }
 
 /*
@@ -92,12 +96,15 @@ function fizzBuzz(number) {
 // plindrome("abbaa") ==> false
 function palindrome(str) {
     var x = str.length ;
-      if (x === 0) {
+    if (x % 2 !== 0) {
+    	return false
+    }
+    else if (x === 0) {
         return true ;
-      }
-      else if (str.charAt(0) === str.charAt(x-1)) {
+    }
+    else if (str.charAt(0) === str.charAt(x-1)) {
         return palindrome(str.slice(1,x-1))
-       }
+    }
   return false ;
 }
 
@@ -166,12 +173,16 @@ function makeChange(n, array){
 
 
 function findMax(arr){
-  if (arr === []) {
+
+  if (arr.length === 1) {
     return arr[0] ;
   }
   else if (arr[1] > arr[0]) {
-    arr[0] = arr[1]
-    return findMax(arr.slice(1)) ;
+    arr.splice(0,1)
+    return findMax(arr) ;
   }
-  return findMax(arr.slice(1)) ;
+else {
+    arr.splice(1,1)
+  return findMax(arr) ;
+}
 }
