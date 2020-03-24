@@ -192,14 +192,12 @@ function stringLength(string){
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
 function modulo(x, y){
-	if (x === 0){
-		return y;
-	}if (y === 0){
+	if (x === 1){
+		return 0;
+	}if (x < y){
 		return x;
 	}if(x >= y){
-	  return modulo(y, (x - y));
-	}if (y >= x){
-		return modulo((y - x), x);
+	  return modulo((x - y), y);
 	}
 }
 
@@ -224,7 +222,7 @@ function indexOf(string, char){
 	if (string[0] === char || string ===""){
 			return 0;
 	}
-		return 1 + indexOf(string.slice(1), char);
+			return 1 + indexOf(string.slice(1), char);
 }
 
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
@@ -247,7 +245,10 @@ function power(base,e) {
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
 function reverseString(string){
-	if 
+	if (string === ""){
+		return string;
+	}
+		return reverseString(string.slice(1))+string[0]
 }
 // 7.Find the greatest common divisor of two numbers.
 function gcd(x,y){
