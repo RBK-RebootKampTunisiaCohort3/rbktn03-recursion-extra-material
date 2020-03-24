@@ -55,8 +55,15 @@ const comments = [
 ]
 
 function removeBadWords(arr,array){
-
-  
+      for (var i = 0 ; i < array.length ; i++) {
+      	if (array[i].content) {
+      		array[i].content = array[i].content.replace(arr[0],'****') ;
+            return array;
+      	}
+      	else if (array[i].length !== 0) {
+      		return removeBadWords(arr,array[i])
+      	}
+      }
     }
 
 
