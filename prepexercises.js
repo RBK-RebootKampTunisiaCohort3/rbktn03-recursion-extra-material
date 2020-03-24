@@ -252,10 +252,12 @@ function reverse(string){
 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
 function handshake(n){
-	if (n===0){
+	if (n===0 || n===1){
 		return 0
 	}
-	else if (n===1){
-
+	else if (n % 2 ===0){ 
+		return 1 + handshake(n-2)
+	} else {
+		return handshake(n-1)
 	}
 }
