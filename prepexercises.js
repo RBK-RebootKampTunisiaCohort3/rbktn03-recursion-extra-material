@@ -93,7 +93,14 @@
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
-
+  function product (start,end) {
+  	 var i = start; 
+	while(start !== end) {
+      i = i + end;
+      start = end + 1;
+	}
+	return i;
+  }
 // Refactor your sum function from earlier to be implemented in terms of product.
 
 // 3.Let's pretend that JavaScript does not have the addition operator + -- instead, it comes with two functions called inc and dec that perform increment and decrement respectively:
