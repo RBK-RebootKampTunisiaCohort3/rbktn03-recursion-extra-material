@@ -5,10 +5,6 @@
 
 const russianDoll = [[[[[[[[['🇷🇺']]]]]]]]]
 
-function nestedRussianDoll(){
-
-}
-
 /*
   The internet is a dangerous place. Write a function that takes an
   array of words to censor. Return the original structure at the end.
@@ -21,7 +17,8 @@ const comments = [
   {
     id: 1,
     content: `Did I ever say I was a real baker? No, I didn't. You mf's on these comments are always trying to pick sh*t apart. Mind your damn business, I wasn't talking to you "A Baker". Now that's being rude!!`,
-    replies: [
+    replies: []
+  },
       {
         id: 2,
         content: `oh good GOD, it is a cake recipe site....take your "facebook balls" and your miserable personality out somewhere else....always a troll, I swear`,
@@ -47,8 +44,14 @@ const comments = [
   }
 ]
 
-function removeBadWords(){
-	
+function removeBadWords() {
+
+  if() { 
+
+
+
+  }
+  
 }
 
 // fizzBuzz is a common interview problem but is usually done with a 'for loop' and not recursively.
