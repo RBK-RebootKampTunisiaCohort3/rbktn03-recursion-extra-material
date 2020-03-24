@@ -6,7 +6,10 @@
 const russianDoll = [[[[[[[[['🇷🇺']]]]]]]]]
 
 function nestedRussianDoll(){
-
+  let result = '';
+  if(!Array.isArray(russianDoll))
+    return russianDoll;
+  return russianDoll.join('')
 }
 
 /*
@@ -20,7 +23,7 @@ function nestedRussianDoll(){
 const comments = [
   {
     id: 1,
-    content: `Did I ever say I was a real baker? No, I didn't. You mf's on these comments are always trying to pick sh*t apart. Mind your damn business, I wasn't talking to you "A Baker". Now that's being rude!!`,
+    content: `Did I ever say I was a real baker? No, I didn't. You mf's on these comments are always trying to pick shit apart. Mind your damn business, I wasn't talking to you "A Baker". Now that's being rude!!`,
     replies: [
       {
         id: 2,
@@ -47,9 +50,21 @@ const comments = [
   }
 ]
 
+ 
 function removeBadWords(){
-	
+      let keys = Object.keys(comments[0])
+      for (let j = 0; j < keys.length; j++){
+        if(typeof comments[0][keys[j]] === 'string')
+        comments[0][keys[j]] = replace(comments[0][keys[j]]);
+    }
+    return comments
+  }   
+
+function replace(input){
+ return input.replace(/shit|mf's|damn/gi,'****');
+
 }
+
 
 // fizzBuzz is a common interview problem but is usually done with a 'for loop' and not recursively.
 // Create a recursive fizzBuzz. If you are unfamiliar, fizzBuzz loops through 1 - 100 and prints either
@@ -58,18 +73,36 @@ function removeBadWords(){
 // If a number is divisible by 5, print 'buzz'.
 // If a number is divisible by 3 and 5, print 'fizzbuzz'.
 // Otherwise print the number itself.
+let n = 1;
 function fizzBuzz() {
-
+  let result;
+  if(n < 100){
+if(n % 3 === 0 && n % 5 === 0)
+  result = "fizzBuzz";
+else if(n % 3 === 0)
+  result = "fizz";
+else if(n % 5 === 0)
+  result = "buzz";
+else result = n
+n++; 
+return result + '\n' + fizzBuzz();
 }
-
+}
 // Create a recursive funciton that will take any string and return a boolean based on whether or
 // not it is a palindrome.
 // palindrome("abba") ==> true
 // plindrome("abbaa") ==> false
-function palindrome() {
-
+function palindrome(str) {
+  let result;
+  if(str !== ''){
+ if(str.length % 2 !== 0)
+  return false;
+else if(str.slice(0,1) !== str.slice(str.length - 1))
+  return false;
+else return palindrome(str.slice(1).slice(0,-1));
+  }
+  return true;
 }
-
 
 // Write a function, lucasNumber(n), that takes in a number.
 // The function should return the n-th number of the Lucas Sequence.
@@ -90,6 +123,11 @@ function palindrome() {
 // lucasNumber(5)   // => 11
 // lucasNumber(9)   // => 76
 function lucasNumber(n) {
+  if(n === 0)
+    return 2;
+  else if(n === 1)
+    return 1;
+  return lucasNumber(n - 1) + lucasNumber(n - 2);
 }
 
 
@@ -105,6 +143,9 @@ function lucasNumber(n) {
 // sumArray([5, 2])         // => 7
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
+  if(array.length === 0)
+    return 0;
+  return array.shift() + sumArray(array)
 }
 
 
@@ -116,12 +157,30 @@ function sumArray(array) {
 // makeChange(100, [0,0,0,0]) ==> [4, 0, 0, 0]
 // makeChange(168, [0, 0, 0, 0]) ==> [6, 1, 1, 3]
 function makeChange(n, array){
+ if(n === 0){
+ return array;}
+else if(n >= 25)
+  return makeChange(n - 25, [array[0]+1, 0, 0, 0])
+else if (n >= 10)
+  return makeChange(n - 10, [array[0], array[1]+1, 0, 0])
+else if (n >= 5)
+  return makeChange(n - 5,[array[0], array[1], array[2]+1, 0])
+else 
+  return makeChange(n - 1, [array[0], array[1], array[2], array[3]+1])
 }
-
 
 // Write a function that takes in an array of numbers and returns the maximum value of that array
 // Solve this recursively 
 
 
 function findMax(arr){
+  if(arr.length === 1)
+    return arr[0];
+  else if(arr[0] < arr[1]){
+        arr.splice(0,1);
+    return findMax(arr);
+  }
+  else {arr.splice(1,1);
+    return findMax(arr)
+  }
 }
