@@ -173,7 +173,15 @@ for(var i= x +1; i < y; i++){
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
 function stringLength (string){
-	string.slice()
+	if (string.slice(0) === ''){
+		return 0
+	}
+	else {
+for (var i = 1; i<string.length; i++){
+		 stringLength(string.slice(i))
+	}
+	return i
+    }
 }
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
