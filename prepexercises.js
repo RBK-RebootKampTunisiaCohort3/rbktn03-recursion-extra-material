@@ -504,4 +504,32 @@ return commonDiv(x, y - x);
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
 
+function commonMultiple(a, b) {
+
+  if(a % b === 0) {
+
+    return b;
+
+  } else if(a > b) {
+
+    commonMultiple(a, b + )
+
+  }
+
+return commonMultiple(a + a, b);   // not yet completeed
+
+}
+
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
+
+function handshake(n) {
+
+  if(n === 0) {
+
+return 0;
+
+  }
+
+return (n- 1) + handshake(n - 1);
+
+}
